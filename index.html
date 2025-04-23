@@ -84,4 +84,31 @@ console.log("This file last modified " + docMod); // generates message in javaSc
  <!-- I changed the dimensions of the canvas so it would fit better on the phone screen -->
    <canvas id="myCanvas" width="300" height="200" style="border:1px solid #000000;">
    </canvas>
+   <!-- The <br> makes sure the button is below the canvas, and not next to it -->
+   <br>
+   <!-- This button runs the function drawRectangle (see below) when clicked, which will draw the rectangle on the canvas-->
+  <button onclick="drawRectangle()">Draw Rectangle</button>
+  <button onclick="showName()">Show Name</button>
+
+  <!-- This script instructs the code to draw a rectangle on the canvas, I can change the border color, fill color, and dimensions of this rectangle -->
+   <script>
+      const canvas = document.getElementById("myCanvas");
+      const ctx = canvas.getContext("2d");
+
+      // This function ensures that the rectangle only generates onto the canvas when the "Draw Rectangle" button is pressed
+      function drawRectangle() {
+         ctx.fillStyle = "orange";
+         ctx.fillRect(0, 0, 150, 75);
+      }
+   </script>
+
+   <!-- This script instructs the code to show my name on the canvas, I can change the font, size, color, and either have the text filled in or outlined -->
+   <script>
+      const canvas = document.getElementById("myCanvas");
+      const ctx = canvas.getContext("2d");
+      
+      // This function 
+      ctx.font = "50px Arial";
+      ctx.fillText("Hello World",10,80);
+   </script>
 </html>
