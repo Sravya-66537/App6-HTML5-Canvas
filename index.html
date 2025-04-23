@@ -89,26 +89,30 @@ console.log("This file last modified " + docMod); // generates message in javaSc
    <!-- This button runs the function drawRectangle (see below) when clicked, which will draw the rectangle on the canvas-->
   <button onclick="drawRectangle()">Draw Rectangle</button>
   <button onclick="showName()">Show Name</button>
+  <button onclick="showImage()">Show Image</button>
 
-  <!-- This script instructs the code to draw a rectangle on the canvas, I can change the border color, fill color, and dimensions of this rectangle -->
+  <!-- This script instructs the code to run the function and display results on the canvas and nowhere else -->
    <script>
       const canvas = document.getElementById("myCanvas");
       const ctx = canvas.getContext("2d");
 
       // This function ensures that the rectangle only generates onto the canvas when the "Draw Rectangle" button is pressed
       function drawRectangle() {
+         // I can change the border color, fill color, and dimensions of this rectangle
          ctx.fillStyle = "orange";
          ctx.fillRect(0, 0, 150, 75);
       }
-   </script>
 
-   <!-- This script instructs the code to show my name on the canvas, I can change the font, size, color, and either have the text filled in or outlined -->
-   <script>
-      const canvas = document.getElementById("myCanvas");
-      const ctx = canvas.getContext("2d");
-      
-      // This function 
-      ctx.font = "50px Arial";
-      ctx.fillText("Hello World",10,80);
-   </script>
+      // This function ensures that my name will only be written on the canvas when the "Show Name" button is clicked
+      function showName() {
+         // I can change the font, size, color, and either have the text filled in or outlined
+         ctx.font = "50px Arial";
+         ctx.fillStyle = "black";
+         ctx.fillText("Sravya",10,150);
+      }
+
+     
+  </script> 
+   
+
 </html>
