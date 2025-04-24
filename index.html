@@ -88,29 +88,55 @@ console.log("This file last modified " + docMod); // generates message in javaSc
    <br>
    <!-- This button runs the function drawRectangle (see below) when clicked, which will draw the rectangle on the canvas-->
   <button onclick="drawRectangle()">Draw Rectangle</button>
+   <!-- This button runs the function showName when clicked, which will show my name on the canvas -->
   <button onclick="showName()">Show Name</button>
+  <!-- This button runs the function showImage when clicked, which will show a specific image that I have selected onto the canvas -->
   <button onclick="showImage()">Show Image</button>
+  <!-- This button runs the function resetCanvas when clicked, which will reset the canvas back to a blank slate -->
+  <button onclick="resetCanvas()">Reset Canvas</button>
 
   <!-- This script instructs the code to run the function and display results on the canvas and nowhere else -->
    <script>
       const canvas = document.getElementById("myCanvas");
       const ctx = canvas.getContext("2d");
 
-      // This function ensures that the rectangle only generates onto the canvas when the "Draw Rectangle" button is pressed
-      function drawRectangle() {
-         // I can change the border color, fill color, and dimensions of this rectangle
-         ctx.fillStyle = "orange";
-         ctx.fillRect(0, 0, 150, 75);
-      }
+         // This function ensures that the rectangle only generates onto the canvas when the "Draw Rectangle" button is pressed
+         function drawRectangle() {
+            // I can change the border color, fill color, and dimensions of this rectangle
+            ctx.fillStyle = "orange";
+            ctx.fillRect(0, 0, 150, 75);
+            }
 
-      // This function ensures that my name will only be written on the canvas when the "Show Name" button is clicked
-      function showName() {
-         // I can change the font, size, color, and either have the text filled in or outlined
-         ctx.font = "50px Arial";
-         ctx.fillStyle = "black";
-         ctx.fillText("Sravya",10,150);
-      }
+         // This function ensures that my name will only be written on the canvas when the "Show Name" button is clicked
+         function showName() {
+            // I can change the font, size, color, and either have the text filled in or outlined
+            ctx.font = "50px Arial";
+            ctx.fillStyle = "black";
+            ctx.fillText("Sravya",10,150);
+            }
 
+      // This part of the code creates an Image object, which acts as a palceholder for the image to generate in the canvas
+      const img = new Image();
+      // This line is the specific image that is being pulled from my File Explorer
+      img.src = "App6CanvasImage.png";
+
+         // This function ensures that the image will only generate onto the canvas when the function runs (when the "Show Image" button is clicked)
+         function showImage() {
+            // I can change the dimensions and features of the canvas. The if, else statement is put in place to run an alternate function if the image deos not load onto the canvas, so the result will be displayed either way.
+            if (img.complete) {
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            }
+            else {
+            img.onload = function() {
+            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);};
+               }
+            }
+         
+         // This function ensures that the canvas will clear or reset only when the "Reset Canvas" button is clicked
+         function resetCanvas() {
+            // I can change the dimensions of this; the first unit is the distance the left edge of the cleared rectangle is from the left canvas border, the second unit is the distance of the top edge from the upper canvas border, the third digit is the width of the cleared canvas, and the last digit is the height of the cleared canvas
+            ctx.clearRect(0,0, 600,300);
+         }
      
   </script> 
    
