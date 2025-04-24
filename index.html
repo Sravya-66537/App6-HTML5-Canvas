@@ -100,6 +100,8 @@ console.log("This file last modified " + docMod); // generates message in javaSc
       const canvas = document.getElementById("myCanvas");
       const ctx = canvas.getContext("2d");
 
+      
+
          // This function ensures that the rectangle only generates onto the canvas when the "Draw Rectangle" button is pressed
          function drawRectangle() {
             // I can change the border color, fill color, and dimensions of this rectangle
@@ -111,14 +113,14 @@ console.log("This file last modified " + docMod); // generates message in javaSc
          function showName() {
             // I can change the font, size, color, and either have the text filled in or outlined
             ctx.font = "50px Arial";
-            ctx.fillStyle = "black";
+            ctx.fillStyle = "white";
             ctx.fillText("Sravya",10,150);
             }
 
       // This part of the code creates an Image object, which acts as a palceholder for the image to generate in the canvas
       const img = new Image();
       // This line is the specific image that is being pulled from my File Explorer
-      img.src = "App6CanvasImage.png";
+      img.src = "App6CanvasImage.png"; // This image is one of my own illustrations!!
 
          // This function ensures that the image will only generate onto the canvas when the function runs (when the "Show Image" button is clicked)
          function showImage() {
@@ -140,5 +142,6 @@ console.log("This file last modified " + docMod); // generates message in javaSc
      
   </script> 
    
+   <!-- The w3 Schools HTML Canvas tutorials helped me a lot in understanding the code and applying it to this app, I also used ChatGPT to help me whenever i ran into some obstacles that I was not able to figure out by myself -->
 
 </html>
